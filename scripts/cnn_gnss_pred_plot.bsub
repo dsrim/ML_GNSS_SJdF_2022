@@ -1,0 +1,16 @@
+#!/bin/sh
+#BSUB -q general
+#BSUB -J sjdf_plot
+#BSUB -R 'rusage[mem=64GB]'
+#BSUB -W 05:00
+#BSUB -N
+#BSUB -a 'docker(dsrim/scenv:0.1-torchclawadrt)'
+#BSUB -u rim@wustl.edu
+#BSUB -oo _sjdf_gnss_plot_out_%J.txt
+#BSUB -eo _sjdf_gnss_plot_err_%J.txt
+##BSUB -gpu 'num=1'
+
+RUNDIR=$PWD'/scripts'
+cd $RUNDIR
+
+/opt/conda/bin/python cnn_gnss_pred_plot.py

@@ -1,0 +1,16 @@
+#!/bin/sh
+#BSUB -q general
+#BSUB -J gnss_data
+#BSUB -R 'rusage[mem=64GB]'
+#BSUB -W 00:30
+#BSUB -N
+#BSUB -a 'docker(dsrim/scenv:0.1)'
+#BSUB -u rim@wustl.edu
+#BSUB -oo _sjdf_gnss_data_out_%J.txt
+#BSUB -eo _sjdf_gnss_data_err_%J.txt
+
+RUNDIR=$PWD'/data'
+cd $RUNDIR
+
+/opt/conda/bin/python down_data.py \
+&& /opt/conda/bin/python proc_data.py
