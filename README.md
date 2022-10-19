@@ -5,6 +5,8 @@ Code repository to accompany the manuscript:
 Data using Convolutional Neural Networks**
 <br>
 by D. Rim, R. Baraldi, C. M. Liu, R. J. LeVeque, and K. Terada
+<br>
+*Geophysical Research Letters*, 2022, [DOI 10.1029/2022GL099511](https://doi.org/10.1029/2022GL099511)
 
 ## Usage
 
