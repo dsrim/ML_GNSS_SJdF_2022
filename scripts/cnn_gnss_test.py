@@ -17,9 +17,9 @@ Model.load_data()
 Model.load_model('sjdf')
 
 nepochs = Model.nepochs
-epochs_list = np.linspace(0, nepochs, 11, dtype=int)[1:]
+epochs_list = [10,]
 
 for epoch in epochs_list:
     Model.predict_dataset(epoch, 
-                          model_list=range(25),
+                          model_list=range(3),
                           gnss_stations_partial_list=gnss_stations_partial_list)
